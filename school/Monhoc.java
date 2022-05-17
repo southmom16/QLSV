@@ -1,12 +1,12 @@
 package school;
 
-public class Monhoc extends SinhVien{
-    private String id_subject;
-    private String name_subject;
-    private int period;
-    private int credit;
-    private int test;
-    private String teacher;
+public class Monhoc{
+    protected String id_subject;
+    protected String name_subject;
+    protected int period;
+    protected int credit;
+    protected int test;
+    protected String teacher;
 
     public Monhoc(){}
     public Monhoc(String id_subject, String name_subject, int period, int credit, int test, String teacher){
@@ -59,13 +59,13 @@ public class Monhoc extends SinhVien{
         return "Monhoc{" + "id= " + id_subject + ", name= " + name_subject + ", period= " + period + ", credit= " + credit + ", test= " + test + ", teacher= " + teacher + "}";
     }
     public void add(){
-        System.out.println("Add successfully");
+        System.out.println("Add subject successfully");
     }
     public void edit(String name){
-        System.out.println("Delete successfully");
+        System.out.println("Delete subject successfully");
     }
     public void del(String name){
-        System.out.println("Edit successfully");
+        System.out.println("Edit subject successfully");
     }
 }
 

@@ -1,12 +1,12 @@
 package school;
 
 public class SinhVien {
-    private String id;
-    private String name;
-    private String address;
-    private String email;
-    private String phone_number;
-    private float payfee;
+    protected String id;
+    protected String name;
+    protected String address;
+    protected String email;
+    protected String phone_number;
+    protected float payfee;
 
     public SinhVien(){
     }
@@ -62,13 +62,17 @@ public class SinhVien {
         return "SinhVien{" + "id= " + id + ", name= " + name + ", address= " + address + ", email= " + email + ", phone number= " + phone_number + ", pay fee = " + payfee + "}";
     }
 
+    public void show(){
+        System.out.println("SinhVien{" + " id= " + id + ", name= " + name + ", address= " + address + ", email= " + email + ", phone number= " + phone_number + ", pay fee = " + payfee + "}");
+    }
+
     public void add(){
-        System.out.println("Add successfully");
+        System.out.println("Add student successfully");
     }
     public void edit(String name){
-        System.out.println("Delete successfully");
+        System.out.println("Delete student successfully");
     }
     public void del(String name){
-        System.out.println("Edit successfully");
+        System.out.println("Edit student successfully");
     }
 }
