@@ -1,6 +1,6 @@
 package school;
 
-import school.Monhoc;
+import school.MonHoc;
 import school.SinhVien;
 
 import java.util.Scanner;
@@ -10,6 +10,7 @@ public class Main {
         SinhVien svtn1 = new SinhVienTrongNuoc("123", "Nguyen Van A", "nguyenvana@gmail.com", "Ha Noi", "09854623", 100000);
         SinhVien svtn2 = new SinhVienTrongNuoc("234", "Nguyen Van B", "nguyenvanb@gmail.com", "Ha Nam", "098549993", 110000);
         SinhVien svtn3 = new SinhVienTrongNuoc("345", "Nguyen Van C", "nguyenvanc@gmail.com", "Hai Phong", "0985456435", 120000);
+
 
         svtn1.show();
         svtn1.add();
@@ -30,7 +31,7 @@ public class Main {
         svnn3.show();
         svnn3.add();
 
-        Monhoc[] monhocs = new Monhoc[100];
+        AbstractMonHoc[] monhocs = new MonHoc[100];
         int n;
         Scanner sc1 = new Scanner(System.in);
         System.out.println("number subject: ");
@@ -41,8 +42,8 @@ public class Main {
             System.out.println(monhocs[i]);
         }
     }
-        public static Monhoc getMonHocInfo(){
-            Monhoc m = null;
+        public static AbstractMonHoc getMonHocInfo(){
+            MonHoc m = null;
 
             String id_subject, name_subject, teacher;
             int test, period, credit;
@@ -74,7 +75,7 @@ public class Main {
             System.out.println("Teacher: ");
             teacher = sc1.nextLine();
 
-            m = new Monhoc(id_subject, name_subject, period, credit, test, teacher);
+            m = new MonHoc(id_subject, name_subject, period, credit, test, teacher);
 
             return m;
         }

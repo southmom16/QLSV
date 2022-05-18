@@ -1,15 +1,7 @@
 package school;
 
-public class Monhoc{
-    protected String id_subject;
-    protected String name_subject;
-    protected int period;
-    protected int credit;
-    protected int test;
-    protected String teacher;
-
-    public Monhoc(){}
-    public Monhoc(String id_subject, String name_subject, int period, int credit, int test, String teacher){
+public class MonHoc extends AbstractMonHoc {
+    public MonHoc(String id_subject, String name_subject, int period, int credit, int test, String teacher){
         this.id_subject = id_subject;
         this.name_subject = name_subject;
         this.period = period;
@@ -58,12 +50,15 @@ public class Monhoc{
     public String toString(){
         return "Monhoc{" + "id= " + id_subject + ", name= " + name_subject + ", period= " + period + ", credit= " + credit + ", test= " + test + ", teacher= " + teacher + "}";
     }
+    @Override
     public void add(){
         System.out.println("Add subject successfully");
     }
+    @Override
     public void edit(String name){
         System.out.println("Delete subject successfully");
     }
+    @Override
     public void del(String name){
         System.out.println("Edit subject successfully");
     }

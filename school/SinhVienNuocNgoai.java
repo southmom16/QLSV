@@ -3,7 +3,7 @@ package school;
 public class SinhVienNuocNgoai extends SinhVien{
     private String nationality;
 
-
+    public SinhVienNuocNgoai(){}
     public SinhVienNuocNgoai(String nationality, String id, String name, String email, String address, String phone_number, float payfee){
         super(id, name, email, address, phone_number, payfee);
         this.nationality = nationality;
@@ -20,13 +20,16 @@ public class SinhVienNuocNgoai extends SinhVien{
         System.out.println("SinhVien{" + "nationality= " + nationality + ", id= " + id + ", name= " + name + ", address= " + address + ", email= " + email + ", phone number= " + phone_number + ", pay fee = " + payfee + "}");
     }
 
+    @Override
     public void add(){
-        System.out.println("Add student successfully");
+        System.out.println("Add foreign student successfully");
     }
+    @Override
     public void edit(String name){
-        System.out.println("Delete student successfully");
+        System.out.println("Delete foreign student successfully");
     }
+    @Override
     public void del(String name){
-        System.out.println("Edit student successfully");
+        System.out.println("Edit foreign student successfully");
     }
 }
