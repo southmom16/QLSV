@@ -7,29 +7,46 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        SinhVien svtn1 = new SinhVienTrongNuoc("123", "Nguyen Van A", "nguyenvana@gmail.com", "Ha Noi", "09854623", 100000);
-        SinhVien svtn2 = new SinhVienTrongNuoc("234", "Nguyen Van B", "nguyenvanb@gmail.com", "Ha Nam", "098549993", 110000);
-        SinhVien svtn3 = new SinhVienTrongNuoc("345", "Nguyen Van C", "nguyenvanc@gmail.com", "Hai Phong", "0985456435", 120000);
-
+        SinhVienTrongNuoc svtn1 = new SinhVienTrongNuoc("123", "Nguyen Van A", "nguyenvana@gmail.com", "Ha Noi", "09854623", 100000);
+        SinhVienTrongNuoc svtn2 = new SinhVienTrongNuoc("234", "Nguyen Van B", "nguyenvanb@gmail.com", "Ha Nam", "098549993", 110000);
+        SinhVienTrongNuoc svtn3 = new SinhVienTrongNuoc("345", "Nguyen Van C", "nguyenvanc@gmail.com", "Hai Phong", "0985456435", 120000);
 
         svtn1.show();
         svtn1.add();
+        svtn1.Nation(svtn1.getName(), svtn1.getNationality());
         svtn2.show();
         svtn2.add();
+        svtn2.Nation(svtn2.getName(), svtn2.getNationality());
         svtn3.show();
         svtn3.add();
+        svtn3.Nation(svtn3.getName(), svtn3.getNationality());
 
-
-        SinhVien svnn1 = new SinhVienNuocNgoai("America", "999", "John", "john@gmail.com", "Canifornia", "09854623", 100000);
-        SinhVien svnn2 = new SinhVienNuocNgoai("Campuchia", "999", "Abc", "abc@gmail.com", "BCD", "09854623", 100000);
-        SinhVien svnn3 = new SinhVienNuocNgoai("Lao", "999", "Bcd", "bcd@gmail.com", "ABC", "09854623", 100000);
+        SinhVienNuocNgoai svnn1 = new SinhVienNuocNgoai("America", "999", "John", "john@gmail.com", "Canifornia", "09854623", 100000);
+        SinhVienNuocNgoai svnn2 = new SinhVienNuocNgoai("Campuchia", "999", "Abc", "abc@gmail.com", "BCD", "09854623", 100000);
+        SinhVienNuocNgoai svnn3 = new SinhVienNuocNgoai("Lao", "999", "Bcd", "bcd@gmail.com", "ABC", "09854623", 100000);
 
         svnn1.show();
         svnn1.add();
+        svnn1.Nation(svnn1.getName(), svnn1.getNationality());
         svnn2.show();
         svnn2.add();
+        svnn2.Nation(svnn2.getName(), svnn2.getNationality());
         svnn3.show();
         svnn3.add();
+        svnn3.Nation(svnn3.getName(), svnn3.getNationality());
+
+
+        System.out.println("Enter student name: ");
+        SinhVien sv = new SinhVien();
+
+        Scanner sc = new Scanner(System.in);
+        String tensv = sc.nextLine();
+        if(tensv.equals(svtn1.name) || tensv.equals(svtn2.name) || tensv.equals(svtn3.name)) {
+            sv = new SinhVienTrongNuoc();
+        } else if (tensv.equals(svnn1.name) || tensv.equals(svnn2.name) || tensv.equals(svnn3.name)) {
+            sv = new SinhVienNuocNgoai();
+        }
+        sv.Student();
 
         AbstractMonHoc[] monhocs = new MonHoc[100];
         int n;

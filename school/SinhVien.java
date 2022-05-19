@@ -66,6 +66,9 @@ public class SinhVien {
         System.out.println("SinhVien{" + " id= " + id + ", name= " + name + ", address= " + address + ", email= " + email + ", phone number= " + phone_number + ", pay fee = " + payfee + "}");
     }
 
+    public void Student(){
+        System.out.println("Student");
+    }
     public void add(){
         System.out.println("Add student successfully");
     }
