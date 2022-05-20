@@ -1,7 +1,7 @@
 package school;
 
 import school.MonHoc;
-import school.SinhVien;
+import school.SinhVienImple;
 
 import java.util.Scanner;
 
@@ -13,13 +13,10 @@ public class Main {
 
         svtn1.show();
         svtn1.add();
-        svtn1.Nation(svtn1.getName(), svtn1.getNationality());
         svtn2.show();
         svtn2.add();
-        svtn2.Nation(svtn2.getName(), svtn2.getNationality());
         svtn3.show();
         svtn3.add();
-        svtn3.Nation(svtn3.getName(), svtn3.getNationality());
 
         SinhVienNuocNgoai svnn1 = new SinhVienNuocNgoai("America", "999", "John", "john@gmail.com", "Canifornia", "09854623", 100000);
         SinhVienNuocNgoai svnn2 = new SinhVienNuocNgoai("Campuchia", "999", "Abc", "abc@gmail.com", "BCD", "09854623", 100000);
@@ -27,28 +24,26 @@ public class Main {
 
         svnn1.show();
         svnn1.add();
-        svnn1.Nation(svnn1.getName(), svnn1.getNationality());
         svnn2.show();
         svnn2.add();
-        svnn2.Nation(svnn2.getName(), svnn2.getNationality());
         svnn3.show();
         svnn3.add();
-        svnn3.Nation(svnn3.getName(), svnn3.getNationality());
 
 
         System.out.println("Enter student name: ");
-        SinhVien sv = new SinhVien();
+//        SinhVienImple sv = new SinhVienImple();
 
         Scanner sc = new Scanner(System.in);
         String tensv = sc.nextLine();
         if(tensv.equals(svtn1.name) || tensv.equals(svtn2.name) || tensv.equals(svtn3.name)) {
-            sv = new SinhVienTrongNuoc();
+            SinhVienImple sv1 = new SinhVienTrongNuoc();
+            sv1.Student();
         } else if (tensv.equals(svnn1.name) || tensv.equals(svnn2.name) || tensv.equals(svnn3.name)) {
-            sv = new SinhVienNuocNgoai();
+            SinhVienImple sv2 = new SinhVienNuocNgoai();
+            sv2.Student();
         }
-        sv.Student();
 
-        AbstractMonHoc[] monhocs = new MonHoc[100];
+        MonHoc[] monhocs = new MonHoc[100];
         int n;
         Scanner sc1 = new Scanner(System.in);
         System.out.println("number subject: ");
@@ -59,7 +54,7 @@ public class Main {
             System.out.println(monhocs[i]);
         }
     }
-        public static AbstractMonHoc getMonHocInfo(){
+        public static MonHoc getMonHocInfo(){
             MonHoc m = null;
 
             String id_subject, name_subject, teacher;

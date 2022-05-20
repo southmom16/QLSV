@@ -1,6 +1,6 @@
 package school;
 
-public class SinhVienNuocNgoai extends SinhVien implements Interface{
+public class SinhVienNuocNgoai extends SinhVienImple{
     private String nationality;
 
     public SinhVienNuocNgoai(){}
@@ -37,10 +37,6 @@ public class SinhVienNuocNgoai extends SinhVien implements Interface{
         System.out.println("Edit foreign student successfully");
     }
 
-    @Override
-    public void Nation(String name, String nationality) {
-        System.out.println("Student "+ name+ " nationality is: " + nationality);
-    }
 
 
 
