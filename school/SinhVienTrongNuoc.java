@@ -1,6 +1,6 @@
 package school;
 
-public class SinhVienTrongNuoc extends SinhVienImple{
+public class SinhVienTrongNuoc extends SinhVien{
     private final String nationality = "Viet Nam";
 
     public SinhVienTrongNuoc(){}
@@ -16,20 +16,21 @@ public class SinhVienTrongNuoc extends SinhVienImple{
     }
 
     @Override
-    public void Student(){
+    public void student_type(){
         System.out.println("Native student");
     }
     @Override
     public void add(){
         System.out.println("Add native student successfully");
     }
+
     @Override
-    public void edit(String name){
-        System.out.println("Delete native student successfully");
+    public void edit(String name) {
+        System.out.println("Delete foreign student successfully");
     }
     @Override
-    public void del(String name){
-        System.out.println("Edit native student successfully");
+    public void del(String name) {
+        System.out.println("Edit foreign student successfully");
     }
 
 

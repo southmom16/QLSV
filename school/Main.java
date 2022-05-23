@@ -1,7 +1,7 @@
 package school;
 
 import school.MonHoc;
-import school.SinhVienImple;
+import school.SinhVien;
 
 import java.util.Scanner;
 
@@ -36,11 +36,11 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String tensv = sc.nextLine();
         if(tensv.equals(svtn1.name) || tensv.equals(svtn2.name) || tensv.equals(svtn3.name)) {
-            SinhVienImple sv1 = new SinhVienTrongNuoc();
-            sv1.Student();
+            SinhVien sv1 = new SinhVienTrongNuoc();
+            sv1.student_type();
         } else if (tensv.equals(svnn1.name) || tensv.equals(svnn2.name) || tensv.equals(svnn3.name)) {
-            SinhVienImple sv2 = new SinhVienNuocNgoai();
-            sv2.Student();
+            SinhVien sv2 = new SinhVienNuocNgoai();
+            sv2.student_type();
         }
 
         MonHoc[] monhocs = new MonHoc[100];

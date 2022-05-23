@@ -1,6 +1,6 @@
 package school;
 
-public class SinhVienNuocNgoai extends SinhVienImple{
+public class SinhVienNuocNgoai extends SinhVien{
     private String nationality;
 
     public SinhVienNuocNgoai(){}
@@ -21,7 +21,7 @@ public class SinhVienNuocNgoai extends SinhVienImple{
     }
 
     @Override
-    public void Student(){
+    public void student_type(){
         System.out.println("Foreign student");
     }
     @Override
