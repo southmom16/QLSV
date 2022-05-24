@@ -1,23 +1,23 @@
 package school;
 
-public abstract class SinhVien implements IShow, IStudent_type, IAdd, IEdit, IDel{
-    protected String id;
-    protected String name;
-    protected String address;
-    protected String email;
-    protected String phone_number;
-    protected float payfee;
+public class SinhVien extends Person implements SVShowInterface,SVtypeInterface, UpdateSVInterface{
+    private String id;
+    private String name;
+    private String address;
+    private String email;
+    private String phone_number;
+    private float payfee;
 
     public SinhVien(){
     }
 
      public SinhVien(String id, String name, String email, String address, String phone_number, float payfee){
-        this.id = id;
-        this.name = name;
-        this.address = address;
-        this.email = email;
-        this.phone_number = phone_number;
-        this.payfee = payfee;
+         this.id = id;
+         this.name = name;
+         this.address = address;
+         this.email = email;
+         this.phone_number = phone_number;
+         this.payfee = payfee;
      }
 
     public void setId(String id){
@@ -57,9 +57,24 @@ public abstract class SinhVien implements IShow, IStudent_type, IAdd, IEdit, IDe
         return payfee;
     }
 
-    public abstract void show();
-    public abstract void student_type();
-    public abstract void add();
-    public abstract void edit(String name);
-    public abstract void del(String name);
+    @Override
+    public void show(){
+        System.out.println("SinhVien{ id= " + id + ", name= " + name + ", address= " + address + ", email= " + email + ", phone number= " + phone_number + ", pay fee = " + payfee + "}");
+    }
+
+    @Override
+    public void add(){
+        System.out.println("Add student successfully");
+    }
+    @Override
+    public void edit(String name){
+        System.out.println("Edit student successfully");
+    }
+    @Override
+    public void del(String name){
+        System.out.println("Delete foreign student successfully");
+    }
+
+    @Override
+    public void student_type() {}
 }

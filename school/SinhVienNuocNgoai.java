@@ -16,8 +16,9 @@ public class SinhVienNuocNgoai extends SinhVien{
         return nationality;
     }
 
+    @Override
     public void show(){
-        System.out.println("SinhVien{" + "nationality= " + nationality + ", id= " + id + ", name= " + name + ", address= " + address + ", email= " + email + ", phone number= " + phone_number + ", pay fee = " + payfee + "}");
+        System.out.println("SinhVien{" + "nationality= " + nationality + ", id= " + getId() + ", name= " + getName() + ", address= " + getAddress() + ", email= " + getEmail() + ", phone number= " + getPhone_number() + ", pay fee = " + getPayfee() + "}");
     }
 
     @Override
@@ -30,14 +31,11 @@ public class SinhVienNuocNgoai extends SinhVien{
     }
     @Override
     public void edit(String name){
-        System.out.println("Delete foreign student successfully");
+        System.out.println("Edit foreign student successfully");
     }
     @Override
     public void del(String name){
-        System.out.println("Edit foreign student successfully");
+        System.out.println("Delete foreign student successfully");
     }
-
-
-
 
 }

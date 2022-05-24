@@ -1,12 +1,12 @@
 package school;
 
 public class MonHoc{
-    protected String id_subject;
-    protected String name_subject;
-    protected int period;
-    protected int credit;
-    protected int test;
-    protected String teacher;
+    private String id_subject;
+    private String name_subject;
+    private int period;
+    private int credit;
+    private int test;
+    private String teacher;
     public MonHoc(String id_subject, String name_subject, int period, int credit, int test, String teacher){
         this.id_subject = id_subject;
         this.name_subject = name_subject;

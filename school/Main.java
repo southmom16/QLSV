@@ -35,13 +35,25 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         String tensv = sc.nextLine();
-        if(tensv.equals(svtn1.name) || tensv.equals(svtn2.name) || tensv.equals(svtn3.name)) {
+        if(tensv.equals(svtn1.getName()) || tensv.equals(svtn2.getName()) || tensv.equals(svtn3.getName())) {
             SinhVien sv1 = new SinhVienTrongNuoc();
             sv1.student_type();
-        } else if (tensv.equals(svnn1.name) || tensv.equals(svnn2.name) || tensv.equals(svnn3.name)) {
+        } else if (tensv.equals(svnn1.getName()) || tensv.equals(svnn2.getName()) || tensv.equals(svnn3.getName())) {
             SinhVien sv2 = new SinhVienNuocNgoai();
             sv2.student_type();
         }
+
+        GiaoVien gv1 = new GiaoVien("1232", "Nguyen Van D", "nguyenvand@gmail.com", "Ha Noi", "09554623", "Math");
+        GiaoVien gv2 = new GiaoVien("234", "Nguyen Van E", "nguyenvane@gmail.com", "Ha Nam", "098949993", "Computer Network");
+        GiaoVien gv3 = new GiaoVien("345", "Nguyen Van F", "nguyenvanf@gmail.com", "Hai Phong", "0975456435", "Big Data");
+
+        gv1.show();
+        gv1.add();
+        gv2.show();
+        gv2.add();
+        gv3.show();
+        gv3.add();
+
 
         MonHoc[] monhocs = new MonHoc[100];
         int n;
@@ -94,59 +106,4 @@ public class Main {
 
     }
 
-//        SinhVien[] sinhviens = new SinhVien[100];
-//        Monhoc[] monhocs = new Monhoc[100];
-//        int n,m;
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("number student: ");
-//        n = sc.nextInt();
-//        for(int i=0; i < n; i++) {
-//            sinhviens[i] = getSinhVienInfo();
-//            sinhviens[i].add();
-//            System.out.println(sinhviens[i]);
-//            Scanner sc1 = new Scanner(System.in);
-//            System.out.println("number subject: ");
-//            m = sc1.nextInt();
-//            for(int j=0;j<m;j++){
-//                monhocs[j] = getMonHocInfo();
-//                monhocs[i].add();
-//                System.out.println(monhocs[j]);
-//            }
-//        }
-////        System.out.println("===============");
-////        for(int i=0; i < n; i++) {
-////            System.out.println(sinhviens[i]);
-////            for(int j=0;j < m;j++){
-////                monhocs[j] = getMonHocInfo();
-////                System.out.println(monhocs[j]);
-////            }
-////        }
-////        System.out.println("===============================");
-//
-//    }
-//    public static SinhVien getSinhVienInfo(){
-//        SinhVien s = null;
-//        String id, name, address, email, phone_number;
-//        float payfee;
-//
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("ID: ");
-//        id = sc.nextLine();
-//        System.out.println("Name: ");
-//        name = sc.nextLine();
-//        System.out.println("Address: ");
-//        address = sc.nextLine();
-//        System.out.println("Email: ");
-//        email = sc.nextLine();
-//        System.out.println("Phone number: ");
-//        phone_number = sc.nextLine();
-//        System.out.println("Pay fee: ");
-//        payfee = sc.nextFloat();
-//
-//
-//        s = new SinhVien(id, name, address, email, phone_number, payfee);
-//
-//        return s;
-//    }
-//
 
