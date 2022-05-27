@@ -1,55 +1,16 @@
 package school;
 
-public class SinhVien extends Person implements SVShowInterface,SVtypeInterface, UpdateSVInterface{
-    private String id;
-    private String name;
-    private String address;
-    private String email;
-    private String phone_number;
+public class SinhVien extends Person implements PersonShowInterface,typeofSV, UpdatePersonInterface{
+    private final String position = "Sinh Vien";
     private float payfee;
 
-    public SinhVien(){
-    }
-
-     public SinhVien(String id, String name, String email, String address, String phone_number, float payfee){
-         this.id = id;
-         this.name = name;
-         this.address = address;
-         this.email = email;
-         this.phone_number = phone_number;
+    public SinhVien(){}
+     public SinhVien(String id, String name, String email, String address, String phoneNumber, float payfee){
+         super(id, name, address, email, phoneNumber);
          this.payfee = payfee;
      }
+    public String getPosition(){return position;}
 
-    public void setId(String id){
-        this.id = id;
-    }
-    public String getId(){
-        return id;
-    }
-    public void setName(String name){
-        this.name = name;
-    }
-    public String getName(){
-        return name;
-    }
-    public void setAddress(String address){
-        this.address = address;
-    }
-    public String getAddress(){
-        return address;
-    }
-    public void setEmail(String email){
-        this.email = email;
-    }
-    public String getEmail(){
-        return email;
-    }
-    public void setPhone_number(String phone_number){
-        this.phone_number = phone_number;
-    }
-    public String getPhone_number(){
-        return phone_number;
-    }
     public void setPayfee(float payfee){
         this.payfee = payfee;
     }
@@ -58,23 +19,25 @@ public class SinhVien extends Person implements SVShowInterface,SVtypeInterface,
     }
 
     @Override
-    public void show(){
-        System.out.println("SinhVien{ id= " + id + ", name= " + name + ", address= " + address + ", email= " + email + ", phone number= " + phone_number + ", pay fee = " + payfee + "}");
-    }
-
-    @Override
-    public void add(){
-        System.out.println("Add student successfully");
+    public String show(){
+        return position + "{ id= " + getId() + ", name= " + getName() + ", address= " + getAddress() + ", email= " + getEmail() + ", phone number= " + getPhoneNumber() + ", pay fee = " + payfee + "}";
     }
     @Override
-    public void edit(String name){
-        System.out.println("Edit student successfully");
+    public String add(){
+        return "Add student successfully";
     }
     @Override
-    public void del(String name){
-        System.out.println("Delete foreign student successfully");
+    public String edit(String name){
+        return "Edit student successfully";
     }
-
     @Override
-    public void student_type() {}
+    public String del(String name){
+        return "Delete foreign student successfully";
+    }
+    @Override
+    public void position() {
+        System.out.println("Position: Sinh Vien");
+    }
+    @Override
+    public void typeofStudent() {}
 }

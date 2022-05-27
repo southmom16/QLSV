@@ -7,58 +7,51 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        SinhVienTrongNuoc svtn1 = new SinhVienTrongNuoc("123", "Nguyen Van A", "nguyenvana@gmail.com", "Ha Noi", "09854623", 100000);
-        SinhVienTrongNuoc svtn2 = new SinhVienTrongNuoc("234", "Nguyen Van B", "nguyenvanb@gmail.com", "Ha Nam", "098549993", 110000);
-        SinhVienTrongNuoc svtn3 = new SinhVienTrongNuoc("345", "Nguyen Van C", "nguyenvanc@gmail.com", "Hai Phong", "0985456435", 120000);
 
-        svtn1.show();
-        svtn1.add();
-        svtn2.show();
-        svtn2.add();
-        svtn3.show();
-        svtn3.add();
+        Person svtn1 = new SinhVienTrongNuoc("123", "Nguyen Van A", "nguyenvana@gmail.com", "Ha Noi", "09854623", 100000);
+        Person svtn2 = new SinhVienTrongNuoc("234", "Nguyen Van B", "nguyenvanb@gmail.com", "Ha Nam", "098549993", 110000);
+        Person svtn3 = new SinhVienTrongNuoc("345", "Nguyen Van C", "nguyenvanc@gmail.com", "Hai Phong", "0985456435", 120000);
 
-        SinhVienNuocNgoai svnn1 = new SinhVienNuocNgoai("America", "999", "John", "john@gmail.com", "Canifornia", "09854623", 100000);
-        SinhVienNuocNgoai svnn2 = new SinhVienNuocNgoai("Campuchia", "999", "Abc", "abc@gmail.com", "BCD", "09854623", 100000);
-        SinhVienNuocNgoai svnn3 = new SinhVienNuocNgoai("Lao", "999", "Bcd", "bcd@gmail.com", "ABC", "09854623", 100000);
+        System.out.println(svtn1.show());
+        System.out.println(svtn2.show());
+        System.out.println(svtn3.show());
 
-        svnn1.show();
-        svnn1.add();
-        svnn2.show();
-        svnn2.add();
-        svnn3.show();
-        svnn3.add();
+
+        Person svnn1 = new SinhVienNuocNgoai("America", "999", "John", "john@gmail.com", "Canifornia", "09854623", 100000);
+        Person svnn2 = new SinhVienNuocNgoai("Campuchia", "999", "Abc", "abc@gmail.com", "BCD", "09854623", 100000);
+        Person svnn3 = new SinhVienNuocNgoai("Lao", "999", "Bcd", "bcd@gmail.com", "ABC", "09854623", 100000);
+
+        System.out.println(svnn1.show());
+        System.out.println(svnn2.show());
+        System.out.println(svnn3.show());
+
+        Person gv1 = new GiaoVien("1232", "Nguyen Van D", "nguyenvand@gmail.com", "Ha Noi", "09554623", "Math");
+        Person gv2 = new GiaoVien("234", "Nguyen Van E", "nguyenvane@gmail.com", "Ha Nam", "098949993", "Computer Network");
+        Person gv3 = new GiaoVien("345", "Nguyen Van F", "nguyenvanf@gmail.com", "Hai Phong", "0975456435", "Big Data");
+
+        System.out.println(gv1.show());
+        System.out.println(gv2.show());
+        System.out.println(gv3.show());
 
 
         System.out.println("Enter student name: ");
-//        SinhVienImple sv = new SinhVienImple();
 
         Scanner sc = new Scanner(System.in);
-        String tensv = sc.nextLine();
-        if(tensv.equals(svtn1.getName()) || tensv.equals(svtn2.getName()) || tensv.equals(svtn3.getName())) {
-            SinhVien sv1 = new SinhVienTrongNuoc();
-            sv1.student_type();
-        } else if (tensv.equals(svnn1.getName()) || tensv.equals(svnn2.getName()) || tensv.equals(svnn3.getName())) {
-            SinhVien sv2 = new SinhVienNuocNgoai();
-            sv2.student_type();
+        String namePerson = sc.nextLine();
+        if(namePerson.equals(svtn1.getName()) || namePerson.equals(svtn2.getName()) || namePerson.equals(svtn3.getName()) || namePerson.equals(svnn1.getName()) || namePerson.equals(svnn2.getName()) || namePerson.equals(svnn3.getName())) {
+            Person p1 = new SinhVien();
+            p1.position();
+        } else if (namePerson.equals(gv1.getName()) || namePerson.equals(gv2.getName()) || namePerson.equals(gv3.getName())) {
+            Person p2 = new GiaoVien();
+            p2.position();
         }
 
-        GiaoVien gv1 = new GiaoVien("1232", "Nguyen Van D", "nguyenvand@gmail.com", "Ha Noi", "09554623", "Math");
-        GiaoVien gv2 = new GiaoVien("234", "Nguyen Van E", "nguyenvane@gmail.com", "Ha Nam", "098949993", "Computer Network");
-        GiaoVien gv3 = new GiaoVien("345", "Nguyen Van F", "nguyenvanf@gmail.com", "Hai Phong", "0975456435", "Big Data");
-
-        gv1.show();
-        gv1.add();
-        gv2.show();
-        gv2.add();
-        gv3.show();
-        gv3.add();
 
 
         MonHoc[] monhocs = new MonHoc[100];
         int n;
         Scanner sc1 = new Scanner(System.in);
-        System.out.println("number subject: ");
+        System.out.println("number of subjects: ");
         n = sc1.nextInt();
         for (int i = 0; i < n; i++) {
             monhocs[i] = getMonHocInfo();
