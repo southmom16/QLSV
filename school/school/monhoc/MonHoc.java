@@ -1,4 +1,4 @@
-package school;
+package school.monhoc;
 
 public class MonHoc{
     private String id_subject;

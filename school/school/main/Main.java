@@ -1,49 +1,54 @@
-package school;
+package school.main;
 
-import school.MonHoc;
-import school.SinhVien;
+import school.person.*;
+import school.monhoc.*;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        Person svtn1 = new SinhVienTrongNuoc("123", "Nguyen Van A", "nguyenvana@gmail.com", "Ha Noi", "09854623", 100000);
-        Person svtn2 = new SinhVienTrongNuoc("234", "Nguyen Van B", "nguyenvanb@gmail.com", "Ha Nam", "098549993", 110000);
-        Person svtn3 = new SinhVienTrongNuoc("345", "Nguyen Van C", "nguyenvanc@gmail.com", "Hai Phong", "0985456435", 120000);
-
-        System.out.println(svtn1.show());
-        System.out.println(svtn2.show());
-        System.out.println(svtn3.show());
+        SinhVien svtn1 = new SinhVienTrongNuoc("123", "Nguyen Van A", "nguyenvana@gmail.com", "Ha Noi", "09854623", 100000);
+        SinhVien svtn2 = new SinhVienTrongNuoc("234", "Nguyen Van B", "nguyenvanb@gmail.com", "Ha Nam", "098549993", 110000);
+        SinhVien svtn3 = new SinhVienTrongNuoc("345", "Nguyen Van C", "nguyenvanc@gmail.com", "Hai Phong", "0985456435", 120000);
 
 
-        Person svnn1 = new SinhVienNuocNgoai("America", "999", "John", "john@gmail.com", "Canifornia", "09854623", 100000);
-        Person svnn2 = new SinhVienNuocNgoai("Campuchia", "999", "Abc", "abc@gmail.com", "BCD", "09854623", 100000);
-        Person svnn3 = new SinhVienNuocNgoai("Lao", "999", "Bcd", "bcd@gmail.com", "ABC", "09854623", 100000);
+        SinhVien svnn1 = new SinhVienNuocNgoai("America", "999", "John", "john@gmail.com", "Canifornia", "09854623", 100000);
+        SinhVien svnn2 = new SinhVienNuocNgoai("Campuchia", "999", "Abc", "abc@gmail.com", "BCD", "09854623", 100000);
+        SinhVien svnn3 = new SinhVienNuocNgoai("Lao", "999", "Bcd", "bcd@gmail.com", "ABC", "09854623", 100000);
 
-        System.out.println(svnn1.show());
-        System.out.println(svnn2.show());
-        System.out.println(svnn3.show());
 
-        Person gv1 = new GiaoVien("1232", "Nguyen Van D", "nguyenvand@gmail.com", "Ha Noi", "09554623", "Math");
-        Person gv2 = new GiaoVien("234", "Nguyen Van E", "nguyenvane@gmail.com", "Ha Nam", "098949993", "Computer Network");
-        Person gv3 = new GiaoVien("345", "Nguyen Van F", "nguyenvanf@gmail.com", "Hai Phong", "0975456435", "Big Data");
+        GiaoVien gv1 = new GiaoVien("1232", "Nguyen Van D", "nguyenvand@gmail.com", "Ha Noi", "09554623", "Math");
+        GiaoVien gv2 = new GiaoVien("234", "Nguyen Van E", "nguyenvane@gmail.com", "Ha Nam", "098949993", "Computer Network");
+        GiaoVien gv3 = new GiaoVien("345", "Nguyen Van F", "nguyenvanf@gmail.com", "Hai Phong", "0975456435", "Big Data");
 
-        System.out.println(gv1.show());
-        System.out.println(gv2.show());
-        System.out.println(gv3.show());
+        ArrayList<Person> person = new ArrayList<>();
+        person.add(svnn1);
+        person.add(svnn2);
+        person.add(svnn3);
+        person.add(svtn1);
+        person.add(svtn2);
+        person.add(svtn3);
+        person.add(gv1);
+        person.add(gv2);
+        person.add(gv3);
 
+        for (int i=0; i<person.size(); i++){
+            person.get(i).showInformation();
+        }
 
         System.out.println("Enter student name: ");
 
         Scanner sc = new Scanner(System.in);
         String namePerson = sc.nextLine();
         if(namePerson.equals(svtn1.getName()) || namePerson.equals(svtn2.getName()) || namePerson.equals(svtn3.getName()) || namePerson.equals(svnn1.getName()) || namePerson.equals(svnn2.getName()) || namePerson.equals(svnn3.getName())) {
-            Person p1 = new SinhVien();
-            p1.position();
+            Person person1 = new SinhVien();
+            person1.position();
         } else if (namePerson.equals(gv1.getName()) || namePerson.equals(gv2.getName()) || namePerson.equals(gv3.getName())) {
-            Person p2 = new GiaoVien();
-            p2.position();
+            Person person2 = new GiaoVien();
+            person2.position();
         }
 
 

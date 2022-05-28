@@ -1,7 +1,7 @@
-package school;
+package school.person;
 
 public class GiaoVien extends Person implements PersonShowInterface, UpdatePersonInterface {
-    private final String position = "Giao Vien";
+    private final String POSITION = "Giao Vien";
     private String subject;
     public GiaoVien(){}
     public GiaoVien(String id, String name, String email, String address, String phoneNumber, String subject){
@@ -15,10 +15,10 @@ public class GiaoVien extends Person implements PersonShowInterface, UpdatePerso
     public String getSubject(){
         return subject;
     }
-    public String getPosition(){return position;}
+    public String getPosition(){return POSITION;}
     @Override
-    public String show() {
-        return position + "{ id= " + getId() + ", name= " + getName() + ", address= " + getAddress() + ", email= " + getEmail() + ", phone number= " + getPhoneNumber() + ", subject= " + subject + "}";
+    public void showInformation() {
+        System.out.println(POSITION + "{ id= " + getId() + ", name= " + getName() + ", address= " + getAddress() + ", email= " + getEmail() + ", phone number= " + getPhoneNumber() + ", subject= " + subject + "}");
     }
     @Override
     public String add() {

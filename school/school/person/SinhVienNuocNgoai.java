@@ -1,4 +1,4 @@
-package school;
+package school.person;
 
 public class SinhVienNuocNgoai extends SinhVien{
     private String nationality;
@@ -17,8 +17,8 @@ public class SinhVienNuocNgoai extends SinhVien{
     }
 
     @Override
-    public String show(){
-        return getPosition() + "{" + "nationality= " + nationality + ", id= " + getId() + ", name= " + getName() + ", address= " + getAddress() + ", email= " + getEmail() + ", phone number= " + getPhoneNumber() + ", pay fee = " + getPayfee() + "}";
+    public void showInformation(){
+        System.out.println(getPosition() + "{" + "nationality= " + nationality + ", id= " + getId() + ", name= " + getName() + ", address= " + getAddress() + ", email= " + getEmail() + ", phone number= " + getPhoneNumber() + ", pay fee = " + getPayfee() + "}");
     }
 
     @Override

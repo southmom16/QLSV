@@ -1,6 +1,6 @@
-package school;
+package school.person;
 
-abstract class Person {
+public abstract class Person {
 
     private String id;
     private String name;
@@ -60,8 +60,7 @@ abstract class Person {
     }
 
     public abstract void position();
-
-    abstract String show();
+    public abstract void showInformation();
 
 }
 

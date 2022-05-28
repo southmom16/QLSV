@@ -1,7 +1,7 @@
-package school;
+package school.person;
 
 public class SinhVien extends Person implements PersonShowInterface,typeofSV, UpdatePersonInterface{
-    private final String position = "Sinh Vien";
+    private final String POSITION = "Sinh Vien";
     private float payfee;
 
     public SinhVien(){}
@@ -9,7 +9,7 @@ public class SinhVien extends Person implements PersonShowInterface,typeofSV, Up
          super(id, name, address, email, phoneNumber);
          this.payfee = payfee;
      }
-    public String getPosition(){return position;}
+    public String getPosition(){return POSITION;}
 
     public void setPayfee(float payfee){
         this.payfee = payfee;
@@ -19,8 +19,8 @@ public class SinhVien extends Person implements PersonShowInterface,typeofSV, Up
     }
 
     @Override
-    public String show(){
-        return position + "{ id= " + getId() + ", name= " + getName() + ", address= " + getAddress() + ", email= " + getEmail() + ", phone number= " + getPhoneNumber() + ", pay fee = " + payfee + "}";
+    public void showInformation(){
+        System.out.println(POSITION + "{ id= " + getId() + ", name= " + getName() + ", address= " + getAddress() + ", email= " + getEmail() + ", phone number= " + getPhoneNumber() + ", pay fee = " + payfee + "}");
     }
     @Override
     public String add(){
