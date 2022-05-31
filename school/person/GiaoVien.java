@@ -1,6 +1,6 @@
 package school.person;
 
-public class GiaoVien extends Person implements PersonShowInterface, UpdatePersonInterface {
+public class GiaoVien extends Person {
     private final String POSITION = "Giao Vien";
     private String subject;
     public GiaoVien(){}
@@ -20,20 +20,5 @@ public class GiaoVien extends Person implements PersonShowInterface, UpdatePerso
     public void showInformation() {
         System.out.println(POSITION + "{ id= " + getId() + ", name= " + getName() + ", address= " + getAddress() + ", email= " + getEmail() + ", phone number= " + getPhoneNumber() + ", subject= " + subject + "}");
     }
-    @Override
-    public String add() {
-        return "Add teacher successfully";
-    }
-    @Override
-    public String edit(String name) {
-        return "Edit teacher successfully";
-    }
-    @Override
-    public String del(String name) {
-        return "Delete teacher successfully";
-    }
-    @Override
-    public void position() {
-        System.out.println("Position: Giao Vien");
-    }
+
 }

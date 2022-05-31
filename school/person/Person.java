@@ -1,6 +1,6 @@
 package school.person;
 
-public abstract class Person {
+public abstract class Person implements PersonShowInterface{
 
     private String id;
     private String name;
@@ -59,8 +59,6 @@ public abstract class Person {
         return phoneNumber;
     }
 
-    public abstract void position();
-    public abstract void showInformation();
-
+    
 }
 

@@ -55,14 +55,4 @@ public class MonHoc{
     public String toString(){
         return "Monhoc{" + "id= " + id_subject + ", name= " + name_subject + ", period= " + period + ", credit= " + credit + ", test= " + test + ", teacher= " + teacher + "}";
     }
-    public void add(){
-        System.out.println("Add subject successfully");
-    }
-    public void edit(String name){
-        System.out.println("Delete subject successfully");
-    }
-    public void del(String name){
-        System.out.println("Edit subject successfully");
-    }
 }
-

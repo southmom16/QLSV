@@ -35,7 +35,7 @@ public class Main {
         person.add(gv2);
         person.add(gv3);
 
-        for (int i=0; i<person.size(); i++){
+        for (int i = 0; i < person.size(); i++) {
             person.get(i).showInformation();
         }
 
@@ -43,15 +43,15 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
         String namePerson = sc.nextLine();
-        if(namePerson.equals(svtn1.getName()) || namePerson.equals(svtn2.getName()) || namePerson.equals(svtn3.getName()) || namePerson.equals(svnn1.getName()) || namePerson.equals(svnn2.getName()) || namePerson.equals(svnn3.getName())) {
-            Person person1 = new SinhVien();
+        if (namePerson.equals(svtn1.getName()) || namePerson.equals(svtn2.getName()) || namePerson.equals(svtn3.getName()) || namePerson.equals(svnn1.getName()) || namePerson.equals(svnn2.getName()) || namePerson.equals(svnn3.getName())) {
+            PositionSV person1 = new PositionSV();
             person1.position();
         } else if (namePerson.equals(gv1.getName()) || namePerson.equals(gv2.getName()) || namePerson.equals(gv3.getName())) {
-            Person person2 = new GiaoVien();
+            PositionGV person2 = new PositionGV();
             person2.position();
         }
 
-
+        System.out.println("-----------------------------\n");
 
         MonHoc[] monhocs = new MonHoc[100];
         int n;
@@ -60,48 +60,45 @@ public class Main {
         n = sc1.nextInt();
         for (int i = 0; i < n; i++) {
             monhocs[i] = getMonHocInfo();
-            monhocs[i].add();
             System.out.println(monhocs[i]);
         }
     }
-        public static MonHoc getMonHocInfo(){
-            MonHoc m = null;
+    public static MonHoc getMonHocInfo(){
+        MonHoc m = null;
 
-            String id_subject, name_subject, teacher;
-            int test, period, credit;
+        String id_subject, name_subject, teacher;
+        int test, period, credit;
 
-            Scanner sc = new Scanner(System.in);
-            Scanner sc1 = new Scanner(System.in);
-            System.out.println("ID subject: ");
-            id_subject = sc.nextLine();
-            System.out.println("Name subject: ");
-            name_subject = sc.nextLine();
-            System.out.println("Period: ");
-            period = sc.nextInt();
-            System.out.println("Credit: ");
-            credit = sc.nextInt();
-            if( credit>= 1 && credit <=4 ){
-            }
-            else {
-                System.out.println("Again: ");
-                credit = sc.nextInt();
-            }
-            System.out.println("Test: ");
-            test = sc.nextInt();
-            if( test> 1 && test <5 ){
-            }
-            else {
-                System.out.println("Again: ");
-                test = sc.nextInt();
-            }
-            System.out.println("Teacher: ");
-            teacher = sc1.nextLine();
-
-            m = new MonHoc(id_subject, name_subject, period, credit, test, teacher);
-
-            return m;
+        Scanner sc = new Scanner(System.in);
+        Scanner sc1 = new Scanner(System.in);
+        System.out.println("ID subject: ");
+        id_subject = sc.nextLine();
+        System.out.println("Name subject: ");
+        name_subject = sc.nextLine();
+        System.out.println("Period: ");
+        period = sc.nextInt();
+        System.out.println("Credit: ");
+        credit = sc.nextInt();
+        if( credit>= 1 && credit <=4 ){
         }
+        else {
+            System.out.println("Again: ");
+            credit = sc.nextInt();
+        }
+        System.out.println("Test: ");
+        test = sc.nextInt();
+        if( test> 1 && test <5 ){
+        }
+        else {
+            System.out.println("Again: ");
+            test = sc.nextInt();
+        }
+        System.out.println("Teacher: ");
+        teacher = sc1.nextLine();
 
+        m = new MonHoc(id_subject, name_subject, period, credit, test, teacher);
+
+        return m;
     }
-
+}
 
