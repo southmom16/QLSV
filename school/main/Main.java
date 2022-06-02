@@ -5,7 +5,9 @@ import school.monhoc.*;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -35,9 +37,13 @@ public class Main {
         person.add(gv2);
         person.add(gv3);
 
+
+
         for (int i = 0; i < person.size(); i++) {
             person.get(i).showInformation();
         }
+
+        System.out.println("Number of person: " + Person.munberofPersonn);
 
         System.out.println("Enter student name: ");
 
@@ -53,52 +59,46 @@ public class Main {
 
         System.out.println("-----------------------------\n");
 
-        MonHoc[] monhocs = new MonHoc[100];
-        int n;
+        MonHoc monhoc1 = new MonHoc("123", "Machine Learning", 60, 4, "Nguyen Van A");
+        MonHoc monhoc2 = new MonHoc("234", "Big Data", 60, 4, "Nguyen Van B");
+        MonHoc monhoc3 = new MonHoc("123", "Computer Network", 45, 3, "Nguyen Van C");
+
+
+        ArrayList<MonHoc> monhoc = new ArrayList<>();
+        monhoc.add(monhoc1);
+        monhoc.add(monhoc2);
+        monhoc.add(monhoc3);
+
+        System.out.println("Enter subject name: ");
+
         Scanner sc1 = new Scanner(System.in);
-        System.out.println("number of subjects: ");
-        n = sc1.nextInt();
-        for (int i = 0; i < n; i++) {
-            monhocs[i] = getMonHocInfo();
-            System.out.println(monhocs[i]);
-        }
-    }
-    public static MonHoc getMonHocInfo(){
-        MonHoc m = null;
+        String nameSubject = sc1.nextLine();
 
-        String id_subject, name_subject, teacher;
-        int test, period, credit;
+        for (int i = 0; i < monhoc.size(); i++) {
+            if (nameSubject.equals(monhoc.get(i).getName_subject())) {
+                System.out.println(monhoc.get(i).toString());
+            }
+        }
 
-        Scanner sc = new Scanner(System.in);
-        Scanner sc1 = new Scanner(System.in);
-        System.out.println("ID subject: ");
-        id_subject = sc.nextLine();
-        System.out.println("Name subject: ");
-        name_subject = sc.nextLine();
-        System.out.println("Period: ");
-        period = sc.nextInt();
-        System.out.println("Credit: ");
-        credit = sc.nextInt();
-        if( credit>= 1 && credit <=4 ){
-        }
-        else {
-            System.out.println("Again: ");
-            credit = sc.nextInt();
-        }
-        System.out.println("Test: ");
-        test = sc.nextInt();
-        if( test> 1 && test <5 ){
-        }
-        else {
-            System.out.println("Again: ");
-            test = sc.nextInt();
-        }
-        System.out.println("Teacher: ");
-        teacher = sc1.nextLine();
+        System.out.println("\t--------------------------");
 
-        m = new MonHoc(id_subject, name_subject, period, credit, test, teacher);
+        for (int i = 0; i < monhoc.size(); i++) {
+            for (int j = 0; j < monhoc.size(); j++) {
+                System.out.println("subject id " + monhoc.get(i).getName_subject() + " equal subject id " + monhoc.get(j).getName_subject() + ": " + monhoc.get(i).equals(monhoc.get(j)));
+            }
+        }
 
-        return m;
+        System.out.println("\t--------------------------");
+
+        Set<MonHoc> monHocs = new HashSet<MonHoc>();
+        monHocs.add(monhoc1);
+        monHocs.add(monhoc2);
+        monHocs.add(monhoc3);
+
+
+        for (MonHoc monHoc : monHocs) {
+            System.out.println(monHoc);
+        }
     }
 }
 

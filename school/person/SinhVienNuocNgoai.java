@@ -18,7 +18,7 @@ public class SinhVienNuocNgoai extends SinhVien{
 
     @Override
     public void showInformation(){
-        System.out.println(getPosition() + "{" + "nationality= " + nationality + ", id= " + getId() + ", name= " + getName() + ", address= " + getAddress() + ", email= " + getEmail() + ", phone number= " + getPhoneNumber() + ", pay fee = " + getPayfee() + "}");
+        System.out.println(getPosition() + "{" + "nationality= " + nationality + ", id= " + getId() + ", name= " + getName() + ", address= " + getAddress() + ", email= " + getEmail() + ", phone number= " + getPhoneNumber() + ", pay fee = " + getPayfee()  + ", school: " + schoolName + "}");
     }
 
 

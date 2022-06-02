@@ -18,7 +18,7 @@ public class GiaoVien extends Person {
     public String getPosition(){return POSITION;}
     @Override
     public void showInformation() {
-        System.out.println(POSITION + "{ id= " + getId() + ", name= " + getName() + ", address= " + getAddress() + ", email= " + getEmail() + ", phone number= " + getPhoneNumber() + ", subject= " + subject + "}");
+        System.out.println(POSITION + "{ id= " + getId() + ", name= " + getName() + ", address= " + getAddress() + ", email= " + getEmail() + ", phone number= " + getPhoneNumber() + ", subject= " + subject + ", school: " + schoolName +"}");
     }
 
 }

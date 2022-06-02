@@ -2,6 +2,9 @@ package school.person;
 
 public abstract class Person implements PersonShowInterface{
 
+    public static int munberofPersonn = 0;
+    public static final String schoolName = "Thuy Loi University";
+
     private String id;
     private String name;
     private String address;
@@ -17,6 +20,7 @@ public abstract class Person implements PersonShowInterface{
         this.address = address;
         this.email = email;
         this.phoneNumber = phone_number;
+        munberofPersonn += 1;
     }
 
     public void setId(String id) {

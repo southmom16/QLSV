@@ -13,7 +13,6 @@ public class SinhVienTrongNuoc extends SinhVien{
 
     @Override
     public void showInformation(){
-        System.out.println(getPosition() +"{" + "nationality= " + NATIONALITY + ", id= " + getId() + ", name= " + getName() + ", address= " + getAddress() + ", email= " + getEmail() + ", phone number= " + getPhoneNumber() + ", pay fee = " + getPayfee() + "}");
+        System.out.println(getPosition() +"{" + "nationality= " + NATIONALITY + ", id= " + getId() + ", name= " + getName() + ", address= " + getAddress() + ", email= " + getEmail() + ", phone number= " + getPhoneNumber() + ", pay fee = " + getPayfee() + ", school: " + schoolName + "}");
     }
-
 }
