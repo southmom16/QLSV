@@ -2,6 +2,7 @@ package school.main;
 
 import school.person.*;
 import school.monhoc.*;
+import school.phonghoc.*;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -37,11 +38,15 @@ public class Main {
         person.add(gv2);
         person.add(gv3);
 
-
-
         for (int i = 0; i < person.size(); i++) {
             person.get(i).showInformation();
         }
+
+        StringBuilder builder = new StringBuilder("List name: ");
+        for(int i=1; i< person.size();i++){
+            builder.append( i + "."+ person.get(i).getName() +"  ");
+        }
+        System.out.println(builder);
 
         System.out.println("Number of person: " + Person.munberofPersonn);
 
@@ -58,6 +63,7 @@ public class Main {
         }
 
         System.out.println("-----------------------------\n");
+
 
         MonHoc monhoc1 = new MonHoc("123", "Machine Learning", 60, 4, "Nguyen Van A");
         MonHoc monhoc2 = new MonHoc("234", "Big Data", 60, 4, "Nguyen Van B");
@@ -99,6 +105,27 @@ public class Main {
         for (MonHoc monHoc : monHocs) {
             System.out.println(monHoc);
         }
+
+        System.out.println("------------------------");
+
+        Scanner sc2 = new Scanner(System.in);
+
+        AbstractFactory theoryClassroomFactory = ClassroomFactory.getFactory("Phong Ly Thuyet");
+        AbstractFactory practiceClassroomFactory = ClassroomFactory.getFactory("Phong Thuc Hanh");
+
+        TheoryClassroom theoryClassroom1 = theoryClassroomFactory.getTheoryClassroom("Phong Ly Thuyet Hoa");
+        theoryClassroom1.create(sc2);
+
+        PracticeClassroom practiceClassroom1 = practiceClassroomFactory.getPracticeClassroom("Phong Thuc Hanh Hoa");
+        practiceClassroom1.create(sc2);
+
+        TheoryClassroom theoryClassroom2 = theoryClassroomFactory.getTheoryClassroom("Phong ly Thuyet Tin");
+        theoryClassroom2.create(sc2);
+
+        PracticeClassroom practiceClassroom2 = practiceClassroomFactory.getPracticeClassroom("Phong Thuc Hanh Tin");
+        practiceClassroom2.create(sc2);
+
+
     }
 }
 
