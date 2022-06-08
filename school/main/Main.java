@@ -126,10 +126,6 @@ public class Main {
         PracticeClassroom practiceClassroom2 = practiceClassroomFactory.getPracticeClassroom("Phong Thuc Hanh Tin");
         practiceClassroom2.create(sc2);
 
-        ClassroomFactory classroomFactory = new ClassroomFactory();
-        classroomFactory.createRoom();
-
-
         System.out.println("----------------------");
         SystemFacade systemFacade = new SystemFacade();
         systemFacade.setInformation();
